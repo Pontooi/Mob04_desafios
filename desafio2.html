@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 2 — Tamanho da Pizza</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #7c2d12;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #fed7aa;
+      border-radius: 12px;
+      font-size: 1rem;
+      background: #fff7ed;
+      outline: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    select:focus {
+      border-color: #ea580c;
+      box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15);
+    }
+
+    .resultado {
+      border: 1px solid #999;
+      padding: 10px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1e293b;
+      transition: background-color 0.3s;
+    }
+
+    .broto  { background-color: lightgreen; }
+    .media  { background-color: lightblue; }
+    .grande { background-color: lightyellow; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🍕 Tamanho da Pizza</h2>
+    <select id="tamanho" onchange="trocarTamanho()">
+      <option value="broto">Pizza Broto</option>
+      <option value="media">Pizza Média</option>
+      <option value="grande">Pizza Grande</option>
+    </select>
+    <div id="resultado" class="resultado">Escolha um tamanho</div>
+  </div>
+
+  <script>
+    function trocarTamanho() {
+      let valor = document.getElementById("tamanho").value;
+
+      if (valor === "broto") {
+        document.getElementById("resultado").innerText = "Broto: R$ 20,00";
+        document.getElementById("resultado").className = "resultado broto";
+      } else if (valor === "media") {
+        document.getElementById("resultado").innerText = "Média: R$ 30,00";
+        document.getElementById("resultado").className = "resultado media";
+      } else {
+        document.getElementById("resultado").innerText = "Grande: R$ 40,00";
+        document.getElementById("resultado").className = "resultado grande";
+      }
+    }
+  </script>
+</body>
+</html>

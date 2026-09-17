@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 1 — Pedido Rápido</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .logo { font-size: 3rem; margin-bottom: 8px; }
+
+    h2 {
+      color: #1e293b;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      padding: 14px;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    button:hover { background-color: #1d4ed8; }
+    button:active { transform: scale(0.97); }
+
+    p#mensagem {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #16a34a;
+      min-height: 1.4em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🍕</div>
+    <h2>Pedido Rápido</h2>
+    <input type="text" id="nomeCliente" placeholder="Digite seu nome">
+    <button onclick="confirmarPedido()">Confirmar</button>
+    <p id="mensagem"></p>
+  </div>
+
+  <script>
+    function confirmarPedido() {
+      let nome = document.getElementById("nomeCliente").value;
+      document.getElementById("mensagem").innerText = "Pedido confirmado para: " + nome + "!";
+    }
+  </script>
+</body>
+</html>
